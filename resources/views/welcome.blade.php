@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Gym App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" href="{{ asset('images/pesa.png') }}" type="image/png">
+
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
