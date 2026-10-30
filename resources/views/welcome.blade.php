@@ -20,7 +20,7 @@
 
         {{-- TITULO --}}
         <h1 class="text-3xl font-bold mb-3">
-            Bienvenido a Gym App
+            Bienvenido a Gym App!
         </h1>
 
         {{-- TEXTO --}}
