@@ -1,3 +1,4 @@
+#GitIgnore
 *.log
 .DS_Store
 .env
