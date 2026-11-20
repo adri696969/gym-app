@@ -28,11 +28,18 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-interaction --prefer-dist
 
-      - name: Create SQLite database
-        run: touch database/database.sqlite
-
       - name: Prepare environment
         run: cp .env.example .env
+
+      - name: Configure SQLite
+        run: |
+          touch database/database.sqlite
+          sed -i 's/^DB_CONNECTION=.*/DB_CONNECTION=sqlite/' .env
+          sed -i 's/^DB_HOST=.*/DB_HOST=/' .env
+          sed -i 's/^DB_PORT=.*/DB_PORT=/' .env
+          sed -i 's/^DB_DATABASE=.*/DB_DATABASE=database\/database.sqlite/' .env
+          sed -i 's/^DB_USERNAME=.*/DB_USERNAME=/' .env
+          sed -i 's/^DB_PASSWORD=.*/DB_PASSWORD=/' .env
 
       - name: Generate application key
         run: php artisan key:generate
